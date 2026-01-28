@@ -3,225 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3C ASAP | 北部 24H 全方位 3C 回收諮詢 - 手機、筆電、電玩、桌機</title>
-    
+    <title>3C ASAP | 24H 全方位 3C 回收諮詢 - 手機、筆電、電玩、各類3C</title>
     <meta name="google-site-verification" content="google0a14fe277b561c6a" />
-
     <style>
         :root {
-            --primary-color: #d4af37; 
-            --bg-color: #0f172a; 
-            --card-bg: #1e293b;
-            --text-light: #f8fafc;
-            --line-green: #06c755;
-            --call-gold: #ffc107;
+            --primary-color: #d4af37; --bg-color: #0f172a; --card-bg: #1e293b;
+            --text-light: #f8fafc; --line-green: #06c755; --call-gold: #ffc107;
         }
-
-        body {
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-light);
-            margin: 0; padding: 0;
-            line-height: 1.6;
-        }
-
-        .status-bar {
-            background-color: #000;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 0.9rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--primary-color);
-        }
-
-        .dot {
-            height: 10px; width: 10px;
-            background-color: #ff4d4d;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
-            animation: blink 1.5s infinite;
-        }
-
+        body { font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; background-color: var(--bg-color); color: var(--text-light); margin: 0; padding: 0; line-height: 1.6; }
+        .status-bar { background-color: #000; text-align: center; padding: 10px 0; font-size: 0.9rem; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--primary-color); }
+        .dot { height: 10px; width: 10px; background-color: #ff4d4d; border-radius: 50%; display: inline-block; margin-right: 8px; animation: blink 1.5s infinite; }
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
         header { text-align: center; padding: 30px 0; }
         .brand-name { font-size: 2.8rem; font-weight: 900; color: var(--primary-color); margin: 0; letter-spacing: 2px; }
-        h1 { color: var(--text-light); font-size: 1.4rem; margin-top: 5px; }
-
-        .tab-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-            justify-content: center;
-        }
-        .tab-btn {
-            padding: 12px 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .tab-btn.active {
-            background: var(--primary-color);
-            color: #000;
-        }
-
-        .cta-group { display: flex; flex-direction: column; gap: 15px; margin: 25px 0; }
-        .cta-button {
-            display: block; text-align: center; padding: 18px;
-            text-decoration: none; border-radius: 50px;
-            font-weight: bold; font-size: 1.3rem; transition: transform 0.2s;
-        }
-        .cta-button.phone { background-color: var(--call-gold); color: #000; box-shadow: 0 4px 15px rgba(255,193,7,0.3); }
+        .tab-container { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; justify-content: center; }
+        .tab-btn { padding: 10px 15px; background: var(--card-bg); border: 1px solid var(--primary-color); color: var(--primary-color); border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .tab-btn.active { background: var(--primary-color); color: #000; }
+        .cta-group { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+        .cta-button { display: block; text-align: center; padding: 15px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; transition: transform 0.2s; }
+        .cta-button.phone { background-color: var(--call-gold); color: #000; }
         .cta-button.line { background-color: var(--line-green); color: white; }
-        .cta-button:hover { transform: scale(1.02); }
-
         .price-table-container { display: none; overflow-x: auto; margin-top: 20px; border-radius: 8px; }
-        .price-table-container.active { display: block; animation: fadeIn 0.5s; }
-        
+        .price-table-container.active { display: block; animation: fadeIn 0.4s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        table { width: 100%; border-collapse: collapse; background-color: var(--card-bg); min-width: 800px; }
+        table { width: 100%; border-collapse: collapse; background-color: var(--card-bg); min-width: 700px; }
         th, td { padding: 12px 8px; text-align: center; border-bottom: 1px solid #334155; }
-        th { background-color: #334155; color: var(--primary-color); font-size: 0.9rem; }
+        th { background-color: #334155; color: var(--primary-color); }
         .model-name { text-align: left; font-weight: bold; padding-left: 15px; background: rgba(0,0,0,0.2); position: sticky; left: 0; }
-        .price-tag { color: #fbbf24; font-weight: bold; font-family: 'Courier New', monospace; }
-
-        .item-card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        footer {
-            text-align: center; font-size: 0.8rem; color: #94a3b8;
-            margin-top: 50px; padding: 30px 10px; border-top: 1px solid #334155;
-        }
+        .price-tag { color: #fbbf24; font-weight: bold; }
+        .item-card { background: var(--card-bg); padding: 18px; border-radius: 10px; margin-bottom: 12px; border-left: 5px solid var(--primary-color); }
+        footer { text-align: center; font-size: 0.8rem; color: #94a3b8; margin-top: 40px; padding: 20px; border-top: 1px solid #334155; }
     </style>
 </head>
 <body>
-
-    <div class="status-bar">
-        <span class="dot"></span> 3C ASAP：手機 / 筆電 / 平板 / 電玩 / 桌機 24H 專人面交
-    </div>
-
+    <div class="status-bar"><span class="dot"></span> 3C ASAP：手機 / 筆電 / 電玩 / 影音 24H 專人回收</div>
     <div class="container">
         <header>
             <p class="brand-name">3C ASAP</p>
-            <h1>全方位 3C 回收 · 現金交易站</h1>
-            <p>24H 專人面交｜各類 3C 高價收購｜隱私安全保障</p>
+            <h1>全方位 3C 回收 · 現金交易</h1>
         </header>
 
         <div class="cta-group">
-            <a href="tel:0981287066" class="cta-button phone">📞 撥打 24H 諮詢專線：0981-287-066</a>
-            <a href="https://line.me/ti/p/~@459drtff" class="cta-button line">💬 LINE 立即預約諮詢：@459drtff</a>
+            <a href="tel:0981287066" class="cta-button phone">📞 撥打 24H 專線：0981-287-066</a>
+            <a href="https://line.me/ti/p/~@459drtff" class="cta-button line">💬 LINE 立即預約：@459drtff</a>
         </div>
 
-        <h3>📦 選擇收購類別查看報價</h3>
         <div class="tab-container">
-            <button class="tab-btn active" onclick="showTab(event, 'apple')">Apple iPhone</button>
-            <button class="tab-btn" onclick="showTab(event, 'android')">安卓品牌 (三星/Sony/小米)</button>
-            <button class="tab-btn" onclick="showTab(event, 'others')">筆電 / 電玩 / 電腦桌機</button>
+            <button class="tab-btn active" onclick="showTab(event, 'apple')">iPhone</button>
+            <button class="tab-btn" onclick="showTab(event, 'samsung')">三星</button>
+            <button class="tab-btn" onclick="showTab(event, 'xiaomi')">小米</button>
+            <button class="tab-btn" onclick="showTab(event, 'google')">谷歌</button>
+            <button class="tab-btn" onclick="showTab(event, 'sony')">索尼</button>
+            <button class="tab-btn" onclick="showTab(event, 'gaming')">電玩/電腦</button>
+            <button class="tab-btn" onclick="showTab(event, 'others')">其他3C類</button>
         </div>
 
         <div id="apple" class="price-table-container active">
             <table>
-                <thead>
-                    <tr>
-                        <th style="text-align:left;">型號 (Model)</th>
-                        <th>64G</th>
-                        <th>128G</th>
-                        <th>256G</th>
-                        <th>512G</th>
-                        <th>1TB</th>
-                    </tr>
-                </thead>
+                <thead><tr><th style="text-align:left;">型號 (Model)</th><th>128G</th><th>256G</th><th>512G</th><th>1TB</th></tr></thead>
                 <tbody>
-                    <tr><td class="model-name">iPhone 17 Pro Max</td><td>-</td><td>-</td><td class="price-tag">36000</td><td class="price-tag">40000</td><td class="price-tag">45000</td></tr>
-                    <tr><td class="model-name">iPhone 17 Pro</td><td>-</td><td>-</td><td class="price-tag">30000</td><td class="price-tag">33000</td><td class="price-tag">37000</td></tr>
-                    <tr><td class="model-name">iPhone 17 Air</td><td>-</td><td>-</td><td class="price-tag">24000</td><td class="price-tag">25000</td><td class="price-tag">27000</td></tr>
-                    <tr><td class="model-name">iPhone 17</td><td>-</td><td>-</td><td class="price-tag">21500</td><td class="price-tag">24500</td><td class="price-tag">27500</td></tr>
-                    <tr><td class="model-name">iPhone 16 Pro Max</td><td>-</td><td>-</td><td class="price-tag">26000</td><td class="price-tag">28000</td><td class="price-tag">30000</td></tr>
-                    <tr><td class="model-name">iPhone 16 Pro</td><td>-</td><td class="price-tag">18000</td><td class="price-tag">21000</td><td class="price-tag">24000</td><td class="price-tag">27000</td></tr>
-                    <tr><td class="model-name">iPhone 16 Plus</td><td>-</td><td class="price-tag">15000</td><td class="price-tag">17000</td><td class="price-tag">19000</td><td class="price-tag">21000</td></tr>
-                    <tr><td class="model-name">iPhone 16</td><td>-</td><td class="price-tag">13500</td><td class="price-tag">15500</td><td class="price-tag">17500</td><td class="price-tag">19500</td></tr>
-                    <tr><td class="model-name">iPhone 15 Pro Max</td><td>-</td><td>-</td><td class="price-tag">18500</td><td class="price-tag">20000</td><td class="price-tag">21500</td></tr>
-                    <tr><td class="model-name">iPhone 15 Pro</td><td>-</td><td class="price-tag">13000</td><td class="price-tag">14500</td><td class="price-tag">16000</td><td class="price-tag">17500</td></tr>
-                    <tr><td class="model-name">iPhone 15 Plus</td><td>-</td><td class="price-tag">11000</td><td class="price-tag">13000</td><td class="price-tag">15000</td><td class="price-tag">17000</td></tr>
-                    <tr><td class="model-name">iPhone 15</td><td>-</td><td class="price-tag">9500</td><td class="price-tag">11000</td><td class="price-tag">12500</td><td class="price-tag">14000</td></tr>
-                    <tr><td class="model-name">iPhone 14 Pro Max</td><td>-</td><td class="price-tag">12000</td><td class="price-tag">13500</td><td class="price-tag">15000</td><td class="price-tag">16500</td></tr>
-                    <tr><td class="model-name">iPhone 14 Pro</td><td>-</td><td class="price-tag">9500</td><td class="price-tag">10500</td><td class="price-tag">11500</td><td class="price-tag">12500</td></tr>
-                    <tr><td class="model-name">iPhone 14 Plus</td><td>-</td><td class="price-tag">8000</td><td class="price-tag">9000</td><td class="price-tag">10000</td><td>-</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 14</td><td>-</td><td class="price-tag">6000</td><td class="price-tag">7500</td><td class="price-tag">9000</td><td>-</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 13 Pro Max</td><td>-</td><td class="price-tag">7000</td><td class="price-tag">8000</td><td class="price-tag">9000</td><td class="price-tag">10000</td></tr>
-                    <tr><td class="model-name">iPhone 13 Pro</td><td>-</td><td class="price-tag">6000</td><td class="price-tag">7000</td><td class="price-tag">8000</td><td class="price-tag">9000</td></tr>
-                    <tr><td class="model-name">iPhone 13</td><td>-</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td class="price-tag">7000</td><td>-</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 13 mini</td><td>-</td><td class="price-tag">4000</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td>-</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 12 Pro Max</td><td>-</td><td class="price-tag">5500</td><td class="price-tag">6500</td><td class="price-tag">7500</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 12 Pro</td><td>-</td><td class="price-tag">4000</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 12</td><td class="price-tag">2500</td><td class="price-tag">3000</td><td class="price-tag">4000</td><td>-</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 12 mini</td><td class="price-tag">2000</td><td class="price-tag">2500</td><td class="price-tag">3500</td><td>-</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 11 Pro Max</td><td class="price-tag">2500</td><td>-</td><td class="price-tag">3000</td><td class="price-tag">4000</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 11 Pro</td><td class="price-tag">1500</td><td>-</td><td class="price-tag">2500</td><td class="price-tag">3500</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone 11</td><td class="price-tag">1500</td><td class="price-tag">2000</td><td class="price-tag">3000</td><td>-</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone XS Max</td><td class="price-tag">1000</td><td>-</td><td class="price-tag">1500</td><td class="price-tag">2500</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone XS</td><td class="price-tag">700</td><td>-</td><td class="price-tag">1200</td><td class="price-tag">1800</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone XR</td><td class="price-tag">500</td><td class="price-tag">1000</td><td class="price-tag">1500</td><td>-</td><td>-</td></tr>
-                    <tr><td class="model-name">iPhone X</td><td class="price-tag">500</td><td>-</td><td class="price-tag">800</td><td>-</td><td>-</td></tr>
-                </tbody>
+                    <tr><td class="model-name">iPhone 17 Pro Max</td><td>-</td><td class="price-tag">36000</td><td class="price-tag">40000</td><td class="price-tag">45000</td></tr>
+                    <tr><td class="model-name">iPhone 16 Pro Max</td><td>-</td><td class="price-tag">26000</td><td class="price-tag">28000</td><td class="price-tag">30000</td></tr>
+                    <tr><td class="model-name">iPhone 15 Pro Max</td><td>-</td><td class="price-tag">18500</td><td class="price-tag">20000</td><td class="price-tag">21500</td></tr>
+                    </tbody>
             </table>
-            <p style="text-align:center; font-size:0.8rem; margin-top:15px;">* 以上為 2026 年度 iPhone 收購參考諮詢表，實際報價請聯絡專人</p>
+            <p style="text-align:center; font-size:0.8rem; margin-top:10px;">*更多 iPhone 型號請見底部提示或 LINE 諮詢</p>
         </div>
 
-        <div id="android" class="price-table-container">
-            <div class="item-card">
-                <h4 style="color:var(--primary-color); margin:0;">📱 三星 SAMSUNG</h4>
-                <p>S24 Ultra / S23 / Fold 6 / Flip 6 全系列回收。</p>
-            </div>
-            <div class="item-card">
-                <h4 style="color:var(--primary-color); margin:0;">📱 索尼 SONY / 谷歌 GOOGLE</h4>
-                <p>Xperia 1 VI / Pixel 9 Pro 等熱門旗艦高價回收。</p>
-            </div>
-            <div class="item-card">
-                <h4 style="color:var(--primary-color); margin:0;">📱 小米 XIAOMI / 其他</h4>
-                <p>小米 14 Ultra、各類旗艦機、紅米系列歡迎詢價。</p>
-            </div>
-            <p style="text-align:center; color:var(--primary-color); font-weight:bold;">安卓手機規格眾多，請直接傳 LINE 獲取當下精確報價</p>
+        <div id="samsung" class="price-table-container">
+            <h4>SAMSUNG 三星旗艦收購 (2022-2024)</h4>
+            <div class="item-card"><b>S24 系列</b>：S24 Ultra / S24+ / S24</div>
+            <div class="item-card"><b>S23 系列</b>：S23 Ultra / S23+ / S23 / S23 FE</div>
+            <div class="item-card"><b>S22 系列</b>：S22 Ultra / S22+ / S22</div>
+            <div class="item-card"><b>摺疊系列</b>：Z Fold 6/5/4、Z Flip 6/5/4</div>
+        </div>
+
+        <div id="xiaomi" class="price-table-container">
+            <h4>XIAOMI 小米旗艦收購 (2022-2024)</h4>
+            <div class="item-card"><b>數字系列</b>：小米 14 Ultra / 14、13 Ultra / 13 Pro / 13</div>
+            <div class="item-card"><b>T系列</b>：小米 14T Pro / 14T、13T Pro / 13T</div>
+            <div class="item-card"><b>其餘系列</b>：Xiaomi 12 Pro / 12、POCO F6 Pro、紅米系列</div>
+        </div>
+
+        <div id="google" class="price-table-container">
+            <h4>GOOGLE Pixel 旗艦收購 (2022-2024)</h4>
+            <div class="item-card"><b>Pixel 9 系列</b>：9 Pro XL / 9 Pro / 9 / 9 Pro Fold</div>
+            <div class="item-card"><b>Pixel 8 系列</b>：8 Pro / 8 / 8a</div>
+            <div class="item-card"><b>Pixel 7 系列</b>：7 Pro / 7 / 7a</div>
+        </div>
+
+        <div id="sony" class="price-table-container">
+            <h4>SONY Xperia 旗艦收購 (2022-2024)</h4>
+            <div class="item-card"><b>1 系列</b>：Xperia 1 VI / 1 V / 1 IV</div>
+            <div class="item-card"><b>5 系列</b>：Xperia 5 V / 5 IV</div>
+            <div class="item-card"><b>專業機</b>：Xperia Pro-I</div>
+        </div>
+
+        <div id="gaming" class="price-table-container">
+            <h4>🎮 電玩遊戲機全系列回收</h4>
+            <div class="item-card">✅ <b>PlayStation</b>：PS5 Pro / Slim、PS4 Pro / Slim、PS3 全系列</div>
+            <div class="item-card">✅ <b>Nintendo</b>：Switch OLED / 電力加強版 / Lite 全系列</div>
+            <div class="item-card">✅ <b>Xbox</b>：Xbox Series X | S、Xbox One X / S 全系列</div>
+            <div class="item-card">✅ <b>STEAM DECK</b>：OLED 版 / LCD 版 全系列</div>
+            <div class="item-card">✅ <b>其他/掌機</b>：ROG Ally、Legion Go、其他各類遊戲機</div>
+            <div class="item-card">💻 <b>電腦類</b>：各品牌電競筆電、MacBook、高階自組桌機</div>
         </div>
 
         <div id="others" class="price-table-container">
-            <div class="item-card">
-                <h4 style="color:var(--primary-color); margin:0;">🎮 電玩遊戲機</h4>
-                <p>✅ PS5 Pro、Switch OLED、Xbox Series X</p>
-            </div>
-            <div class="item-card">
-                <h4 style="color:var(--primary-color); margin:0;">💻 筆記型電腦 / 平板</h4>
-                <p>✅ MacBook 全系列、電競筆電、iPad Pro/Air</p>
-            </div>
-            <div class="item-card">
-                <h4 style="color:var(--primary-color); margin:0;">🖥️ 電腦桌機</h4>
-                <p>✅ 高階自組桌機、iMac、Mac mini 專業收購</p>
-            </div>
+            <h4>🎧 其他 3C 數位類回收</h4>
+            <div class="item-card">🎧 <b>影音設備</b>：耳機 (AirPods/Sony等)、專業音響 (Marshall等)</div>
+            <div class="item-card">📷 <b>相機攝影</b>：單眼相機、數位相機、GoPro、DJI 空拍機</div>
+            <div class="item-card">🥽 <b>穿戴裝置</b>：VR 設備 (Quest/Apple Vision Pro)、Apple Watch</div>
+            <p style="text-align:center;">此類別規格多元，歡迎拍產品照片傳 LINE 諮詢</p>
         </div>
 
         <p style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; padding: 15px; border-radius: 5px; font-size: 0.85rem; margin-top: 20px;">
-            ⚠️ <b>3C ASAP 提醒：</b>北部地區（雙北、基隆、桃園、新竹）專人面交。所有收購產品皆會現場進行專業個資清除，請安心交易。
+            ⚠️ <b>3C ASAP 提醒：</b>北部地區專車面交。所有收購產品皆會現場進行專業個資清除，請安心交易。
         </p>
     </div>
 
     <footer>
-        <p>© 2026 3C ASAP 專業 3C 回收團隊 | 服務專線：0981-287-066</p>
+        <p>© 2026 3C ASAP 專業回收團隊 | 服務專線：0981-287-066</p>
     </footer>
 
     <script>
