@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3C ASAP | 北部 24H 二手機回收諮詢 - 現金交付、隱私安全</title>
+    <style>
+        :root {
+            --primary-color: #d4af37; 
+            --bg-color: #0f172a; 
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --line-green: #06c755;
+            --call-gold: #ffc107;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            margin: 0; padding: 0;
+            line-height: 1.6;
+        }
+
+        .status-bar {
+            background-color: #000;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .dot {
+            height: 10px; width: 10px;
+            background-color: #ff4d4d;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+        header { text-align: center; padding: 30px 0; }
+        .brand-name { font-size: 2.8rem; font-weight: 900; color: var(--primary-color); margin: 0; letter-spacing: 2px; }
+        h1 { color: var(--text-light); font-size: 1.4rem; margin-top: 5px; }
+
+        .cta-group { display: flex; flex-direction: column; gap: 15px; margin: 25px 0; }
+        .cta-button {
+            display: block; text-align: center; padding: 18px;
+            text-decoration: none; border-radius: 50px;
+            font-weight: bold; font-size: 1.3rem; transition: transform 0.2s;
+        }
+        .cta-button.phone { background-color: var(--call-gold); color: #000; box-shadow: 0 4px 15px rgba(255,193,7,0.3); }
+        .cta-button.line { background-color: var(--line-green); color: white; }
+        .cta-button:hover { transform: scale(1.02); }
+
+        .qr-section {
+            text-align: center; background: rgba(255,255,255,0.05);
+            padding: 20px; border-radius: 15px; margin: 20px 0;
+            border: 1px dashed var(--line-green);
+        }
+        .qr-code {
+            width: 160px; height: 160px; background: white;
+            margin: 10px auto; padding: 10px; border-radius: 10px;
+        }
+        .qr-code img { width: 100%; height: 100%; }
+
+        .location-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+            list-style: none; padding: 0;
+        }
+        @media (max-width: 600px) { .location-grid { grid-template-columns: 1fr; } }
+        .location-grid li {
+            padding: 12px; background: var(--card-bg);
+            border-radius: 5px; border-left: 4px solid var(--primary-color);
+        }
+
+        .price-table-container { overflow-x: auto; margin-top: 20px; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; background-color: var(--card-bg); min-width: 750px; }
+        th, td { padding: 12px 8px; text-align: center; border-bottom: 1px solid #334155; }
+        th { background-color: #334155; color: var(--primary-color); font-size: 0.9rem; }
+        .model-name { text-align: left; font-weight: bold; padding-left: 15px; background: rgba(0,0,0,0.2); position: sticky; left: 0; }
+        .price-tag { color: #fbbf24; font-weight: bold; font-family: 'Courier New', monospace; }
+
+        footer {
+            text-align: center; font-size: 0.8rem; color: #94a3b8;
+            margin-top: 50px; padding: 30px 10px; border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="status-bar">
+        <span class="dot"></span> 3C ASAP 專業團隊：24H 在線諮詢，北部地區預約面交
+    </div>
+
+    <div class="container">
+        <header>
+            <p class="brand-name">3C ASAP</p>
+            <h1>專業二手機回收 · 深夜急救站</h1>
+            <p>24H 專人面交｜現場現金交易｜隱私安全保障</p>
+        </header>
+
+        <div class="cta-group">
+            <a href="tel:0981287066" class="cta-button phone">📞 撥打 24H 諮詢專線：0981-287-066</a>
+            <a href="https://line.me/ti/p/~@459drtff" class="cta-button line">💬 LINE 立即預約諮詢：@459drtff</a>
+        </div>
+
+        <section class="qr-section">
+            <p style="margin:0; font-weight:bold; color:var(--line-green);">掃描 QR Code 加 LINE 諮詢</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://line.me/ti/p/~@459drtff" alt="LINE QR Code">
+            </div>
+            <p style="margin:5px 0 0; font-size:0.9rem; color:var(--primary-color);">LINE ID: @459drtff</p>
+        </section>
+
+        <h3>📍 專車面交區域</h3>
+        <ul class="location-grid">
+            <li>📍 <b>新莊地區</b> (捷運幸福站旁)</li>
+            <li>📍 <b>板橋地區</b> (捷運江子翠站旁)</li>
+            <li>📍 <b>南港內湖</b> (捷運南港展覽館站旁)</li>
+            <li>📍 <b>其他地區</b> (雙北、基隆、桃園、新竹)</li>
+        </ul>
+        <p style="text-align: center; color: var(--primary-color); font-size: 0.9rem; font-weight: bold;">
+            * 北部其餘地區歡迎直接來電，討論面交地點 *
+        </p>
+
+        <h3 style="margin-top:40px;">💰 iPhone 收購參考諮詢表 (2026)</h3>
+        <p style="font-size:0.8rem; color:#94a3b8;">* 以下數據源自您的報價單圖片，僅供諮詢參考 *</p>
+        
+        <div class="price-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align:left;">型號 (Model)</th>
+                        <th>64G</th>
+                        <th>128G</th>
+                        <th>256G</th>
+                        <th>512G</th>
+                        <th>1TB</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="model-name">iPhone 17 Pro Max</td><td>-</td><td>-</td><td class="price-tag">36000</td><td class="price-tag">40000</td><td class="price-tag">45000</td></tr>
+                    <tr><td class="model-name">iPhone 17 Pro</td><td>-</td><td>-</td><td class="price-tag">30000</td><td class="price-tag">33000</td><td class="price-tag">37000</td></tr>
+                    <tr><td class="model-name">iPhone 17 Air</td><td>-</td><td>-</td><td class="price-tag">24000</td><td class="price-tag">25000</td><td class="price-tag">27000</td></tr>
+                    <tr><td class="model-name">iPhone 17</td><td>-</td><td>-</td><td class="price-tag">21500</td><td class="price-tag">24500</td><td class="price-tag">27500</td></tr>
+                    <tr><td class="model-name">iPhone 16 Pro Max</td><td>-</td><td>-</td><td class="price-tag">26000</td><td class="price-tag">28000</td><td class="price-tag">30000</td></tr>
+                    <tr><td class="model-name">iPhone 16 Pro</td><td>-</td><td class="price-tag">18000</td><td class="price-tag">21000</td><td class="price-tag">24000</td><td class="price-tag">27000</td></tr>
+                    <tr><td class="model-name">iPhone 16 Plus</td><td>-</td><td class="price-tag">15000</td><td class="price-tag">17000</td><td class="price-tag">19000</td><td class="price-tag">21000</td></tr>
+                    <tr><td class="model-name">iPhone 16</td><td>-</td><td class="price-tag">13500</td><td class="price-tag">15500</td><td class="price-tag">17500</td><td class="price-tag">19500</td></tr>
+                    <tr><td class="model-name">iPhone 15 Pro Max</td><td>-</td><td>-</td><td class="price-tag">18500</td><td class="price-tag">20000</td><td class="price-tag">21500</td></tr>
+                    <tr><td class="model-name">iPhone 15 Pro</td><td>-</td><td class="price-tag">13000</td><td class="price-tag">14500</td><td class="price-tag">16000</td><td class="price-tag">17500</td></tr>
+                    <tr><td class="model-name">iPhone 15 Plus</td><td>-</td><td class="price-tag">11000</td><td class="price-tag">13000</td><td class="price-tag">15000</td><td class="price-tag">17000</td></tr>
+                    <tr><td class="model-name">iPhone 15</td><td>-</td><td class="price-tag">9500</td><td class="price-tag">11000</td><td class="price-tag">12500</td><td class="price-tag">14000</td></tr>
+                    <tr><td class="model-name">iPhone 14 Pro Max</td><td>-</td><td class="price-tag">12000</td><td class="price-tag">13500</td><td class="price-tag">15000</td><td class="price-tag">16500</td></tr>
+                    <tr><td class="model-name">iPhone 14 Pro</td><td>-</td><td class="price-tag">9500</td><td class="price-tag">10500</td><td class="price-tag">11500</td><td class="price-tag">12500</td></tr>
+                    <tr><td class="model-name">iPhone 14 Plus</td><td>-</td><td class="price-tag">8000</td><td class="price-tag">9000</td><td class="price-tag">10000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 14</td><td>-</td><td class="price-tag">6000</td><td class="price-tag">7500</td><td class="price-tag">9000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 13 Pro Max</td><td>-</td><td class="price-tag">7000</td><td class="price-tag">8000</td><td class="price-tag">9000</td><td class="price-tag">10000</td></tr>
+                    <tr><td class="model-name">iPhone 13 Pro</td><td>-</td><td class="price-tag">6000</td><td class="price-tag">7000</td><td class="price-tag">8000</td><td class="price-tag">9000</td></tr>
+                    <tr><td class="model-name">iPhone 13</td><td>-</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td class="price-tag">7000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 13 mini</td><td>-</td><td class="price-tag">4000</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 12 Pro Max</td><td>-</td><td class="price-tag">5500</td><td class="price-tag">6500</td><td class="price-tag">7500</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 12 Pro</td><td>-</td><td class="price-tag">4000</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 12</td><td class="price-tag">2500</td><td class="price-tag">3000</td><td class="price-tag">4000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 12 mini</td><td class="price-tag">2000</td><td class="price-tag">2500</td><td class="price-tag">3500</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 11 Pro Max</td><td class="price-tag">2500</td><td>-</td><td class="price-tag">3000</td><td class="price-tag">4000</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 11 Pro</td><td class="price-tag">1500</td><td>-</td><td class="price-tag">2500</td><td class="price-tag">3500</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 11</td><td class="price-tag">1500</td><td class="price-tag">2000</td><td class="price-tag">3000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone XS Max</td><td class="price-tag">1000</td><td>-</td><td class="price-tag">1500</td><td class="price-tag">2500</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone XS</td><td class="price-tag">700</td><td>-</td><td class="price-tag">1200</td><td class="price-tag">1800</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone XR</td><td class="price-tag">500</td><td class="price-tag">1000</td><td class="price-tag">1500</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone X</td><td class="price-tag">500</td><td>-</td><td class="price-tag">800</td><td>-</td><td>-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; padding: 15px; border-radius: 5px; font-size: 0.85rem; margin-top: 20px;">
+            ⚠️ <b>3C ASAP 溫馨提示：</b>由於市場價格變動頻繁且機況（電池、刮傷、零件狀況）不同，本表僅供諮詢參考。請務必聯繫專人獲取當下精確報價。
+        </p>
+    </div>
+
+    <footer>
+        <p>© 2026 3C ASAP 專業二手機收購團隊</p>
+        <p>服務專線：0981-287-066</p>
+        <p>服務範圍：基隆、雙北、桃園、新竹</p>
+    </footer>
+
+</body>
+</html>
