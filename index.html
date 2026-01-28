@@ -53,7 +53,6 @@
         .brand-name { font-size: 2.8rem; font-weight: 900; color: var(--primary-color); margin: 0; letter-spacing: 2px; }
         h1 { color: var(--text-light); font-size: 1.4rem; margin-top: 5px; }
 
-        /* 分類切換按鈕 */
         .tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -62,7 +61,7 @@
             justify-content: center;
         }
         .tab-btn {
-            padding: 10px 20px;
+            padding: 12px 20px;
             background: var(--card-bg);
             border: 1px solid var(--primary-color);
             color: var(--primary-color);
@@ -91,11 +90,11 @@
         
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        table { width: 100%; border-collapse: collapse; background-color: var(--card-bg); min-width: 600px; }
+        table { width: 100%; border-collapse: collapse; background-color: var(--card-bg); min-width: 800px; }
         th, td { padding: 12px 8px; text-align: center; border-bottom: 1px solid #334155; }
         th { background-color: #334155; color: var(--primary-color); font-size: 0.9rem; }
-        .model-name { text-align: left; font-weight: bold; padding-left: 15px; }
-        .price-tag { color: #fbbf24; font-weight: bold; }
+        .model-name { text-align: left; font-weight: bold; padding-left: 15px; background: rgba(0,0,0,0.2); position: sticky; left: 0; }
+        .price-tag { color: #fbbf24; font-weight: bold; font-family: 'Courier New', monospace; }
 
         .item-card {
             background: var(--card-bg);
@@ -114,14 +113,14 @@
 <body>
 
     <div class="status-bar">
-        <span class="dot"></span> 3C ASAP：手機 / 筆電 / 平板 / 電玩 / 桌機 24H 專人回收
+        <span class="dot"></span> 3C ASAP：手機 / 筆電 / 平板 / 電玩 / 桌機 24H 專人面交
     </div>
 
     <div class="container">
         <header>
             <p class="brand-name">3C ASAP</p>
             <h1>全方位 3C 回收 · 現金交易站</h1>
-            <p>24H 專車面交｜各類 3C 高價收購｜隱私完全清除</p>
+            <p>24H 專人面交｜各類 3C 高價收購｜隱私安全保障</p>
         </header>
 
         <div class="cta-group">
@@ -131,62 +130,93 @@
 
         <h3>📦 選擇收購類別查看報價</h3>
         <div class="tab-container">
-            <button class="tab-btn active" onclick="showTab('apple')">Apple iPhone</button>
-            <button class="tab-btn" onclick="showTab('android')">安卓手機 (三星/Sony等)</button>
-            <button class="tab-btn" onclick="showTab('others')">電玩 / 筆電 / 電腦</button>
+            <button class="tab-btn active" onclick="showTab(event, 'apple')">Apple iPhone</button>
+            <button class="tab-btn" onclick="showTab(event, 'android')">安卓品牌 (三星/Sony/小米)</button>
+            <button class="tab-btn" onclick="showTab(event, 'others')">筆電 / 電玩 / 電腦桌機</button>
         </div>
 
         <div id="apple" class="price-table-container active">
             <table>
                 <thead>
-                    <tr><th style="text-align:left;">型號 (Model)</th><th>256G 參考價</th><th>512G 參考價</th></tr>
+                    <tr>
+                        <th style="text-align:left;">型號 (Model)</th>
+                        <th>64G</th>
+                        <th>128G</th>
+                        <th>256G</th>
+                        <th>512G</th>
+                        <th>1TB</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td class="model-name">iPhone 17 Pro Max</td><td class="price-tag">36000</td><td class="price-tag">40000</td></tr>
-                    <tr><td class="model-name">iPhone 16 Pro Max</td><td class="price-tag">26000</td><td class="price-tag">28000</td></tr>
-                    <tr><td class="model-name">iPhone 15 Pro Max</td><td class="price-tag">18500</td><td class="price-tag">20000</td></tr>
+                    <tr><td class="model-name">iPhone 17 Pro Max</td><td>-</td><td>-</td><td class="price-tag">36000</td><td class="price-tag">40000</td><td class="price-tag">45000</td></tr>
+                    <tr><td class="model-name">iPhone 17 Pro</td><td>-</td><td>-</td><td class="price-tag">30000</td><td class="price-tag">33000</td><td class="price-tag">37000</td></tr>
+                    <tr><td class="model-name">iPhone 17 Air</td><td>-</td><td>-</td><td class="price-tag">24000</td><td class="price-tag">25000</td><td class="price-tag">27000</td></tr>
+                    <tr><td class="model-name">iPhone 17</td><td>-</td><td>-</td><td class="price-tag">21500</td><td class="price-tag">24500</td><td class="price-tag">27500</td></tr>
+                    <tr><td class="model-name">iPhone 16 Pro Max</td><td>-</td><td>-</td><td class="price-tag">26000</td><td class="price-tag">28000</td><td class="price-tag">30000</td></tr>
+                    <tr><td class="model-name">iPhone 16 Pro</td><td>-</td><td class="price-tag">18000</td><td class="price-tag">21000</td><td class="price-tag">24000</td><td class="price-tag">27000</td></tr>
+                    <tr><td class="model-name">iPhone 16 Plus</td><td>-</td><td class="price-tag">15000</td><td class="price-tag">17000</td><td class="price-tag">19000</td><td class="price-tag">21000</td></tr>
+                    <tr><td class="model-name">iPhone 16</td><td>-</td><td class="price-tag">13500</td><td class="price-tag">15500</td><td class="price-tag">17500</td><td class="price-tag">19500</td></tr>
+                    <tr><td class="model-name">iPhone 15 Pro Max</td><td>-</td><td>-</td><td class="price-tag">18500</td><td class="price-tag">20000</td><td class="price-tag">21500</td></tr>
+                    <tr><td class="model-name">iPhone 15 Pro</td><td>-</td><td class="price-tag">13000</td><td class="price-tag">14500</td><td class="price-tag">16000</td><td class="price-tag">17500</td></tr>
+                    <tr><td class="model-name">iPhone 15 Plus</td><td>-</td><td class="price-tag">11000</td><td class="price-tag">13000</td><td class="price-tag">15000</td><td class="price-tag">17000</td></tr>
+                    <tr><td class="model-name">iPhone 15</td><td>-</td><td class="price-tag">9500</td><td class="price-tag">11000</td><td class="price-tag">12500</td><td class="price-tag">14000</td></tr>
+                    <tr><td class="model-name">iPhone 14 Pro Max</td><td>-</td><td class="price-tag">12000</td><td class="price-tag">13500</td><td class="price-tag">15000</td><td class="price-tag">16500</td></tr>
+                    <tr><td class="model-name">iPhone 14 Pro</td><td>-</td><td class="price-tag">9500</td><td class="price-tag">10500</td><td class="price-tag">11500</td><td class="price-tag">12500</td></tr>
+                    <tr><td class="model-name">iPhone 14 Plus</td><td>-</td><td class="price-tag">8000</td><td class="price-tag">9000</td><td class="price-tag">10000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 14</td><td>-</td><td class="price-tag">6000</td><td class="price-tag">7500</td><td class="price-tag">9000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 13 Pro Max</td><td>-</td><td class="price-tag">7000</td><td class="price-tag">8000</td><td class="price-tag">9000</td><td class="price-tag">10000</td></tr>
+                    <tr><td class="model-name">iPhone 13 Pro</td><td>-</td><td class="price-tag">6000</td><td class="price-tag">7000</td><td class="price-tag">8000</td><td class="price-tag">9000</td></tr>
+                    <tr><td class="model-name">iPhone 13</td><td>-</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td class="price-tag">7000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 13 mini</td><td>-</td><td class="price-tag">4000</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 12 Pro Max</td><td>-</td><td class="price-tag">5500</td><td class="price-tag">6500</td><td class="price-tag">7500</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 12 Pro</td><td>-</td><td class="price-tag">4000</td><td class="price-tag">5000</td><td class="price-tag">6000</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 12</td><td class="price-tag">2500</td><td class="price-tag">3000</td><td class="price-tag">4000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 12 mini</td><td class="price-tag">2000</td><td class="price-tag">2500</td><td class="price-tag">3500</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 11 Pro Max</td><td class="price-tag">2500</td><td>-</td><td class="price-tag">3000</td><td class="price-tag">4000</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 11 Pro</td><td class="price-tag">1500</td><td>-</td><td class="price-tag">2500</td><td class="price-tag">3500</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone 11</td><td class="price-tag">1500</td><td class="price-tag">2000</td><td class="price-tag">3000</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone XS Max</td><td class="price-tag">1000</td><td>-</td><td class="price-tag">1500</td><td class="price-tag">2500</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone XS</td><td class="price-tag">700</td><td>-</td><td class="price-tag">1200</td><td class="price-tag">1800</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone XR</td><td class="price-tag">500</td><td class="price-tag">1000</td><td class="price-tag">1500</td><td>-</td><td>-</td></tr>
+                    <tr><td class="model-name">iPhone X</td><td class="price-tag">500</td><td>-</td><td class="price-tag">800</td><td>-</td><td>-</td></tr>
                 </tbody>
             </table>
-            <p style="text-align:center; font-size:0.8rem; margin-top:10px;">*iPhone 全系列型號眾多，歡迎直接傳圖諮詢</p>
+            <p style="text-align:center; font-size:0.8rem; margin-top:15px;">* 以上為 2026 年度 iPhone 收購參考諮詢表，實際報價請聯絡專人</p>
         </div>
 
         <div id="android" class="price-table-container">
             <div class="item-card">
-                <h4 style="color:var(--primary-color); margin-top:0;">📱 三星 SAMSUNG</h4>
-                <p>收購重點：S24 Ultra、S23系列、Z Fold 6 / Flip 6 折疊系列。</p>
-                <p class="price-tag">熱門機型高價回收中</p>
+                <h4 style="color:var(--primary-color); margin:0;">📱 三星 SAMSUNG</h4>
+                <p>S24 Ultra / S23 / Fold 6 / Flip 6 全系列回收。</p>
             </div>
             <div class="item-card">
-                <h4 style="color:var(--primary-color); margin-top:0;">📱 索尼 SONY / 谷歌 GOOGLE</h4>
-                <p>收購重點：Xperia 1 VI / V 系列、Pixel 9 Pro / 8 系列。</p>
+                <h4 style="color:var(--primary-color); margin:0;">📱 索尼 SONY / 谷歌 GOOGLE</h4>
+                <p>Xperia 1 VI / Pixel 9 Pro 等熱門旗艦高價回收。</p>
             </div>
             <div class="item-card">
-                <h4 style="color:var(--primary-color); margin-top:0;">📱 小米 XIAOMI / OPPO</h4>
-                <p>收購重點：小米 14 Ultra、各類高階影像旗艦、紅米系列。</p>
+                <h4 style="color:var(--primary-color); margin:0;">📱 小米 XIAOMI / 其他</h4>
+                <p>小米 14 Ultra、各類旗艦機、紅米系列歡迎詢價。</p>
             </div>
-            <p style="text-align:center;">安卓手機價格變動快，請告知「型號/容量/有無傷」立即報價</p>
+            <p style="text-align:center; color:var(--primary-color); font-weight:bold;">安卓手機規格眾多，請直接傳 LINE 獲取當下精確報價</p>
         </div>
 
         <div id="others" class="price-table-container">
             <div class="item-card">
-                <h4 style="color:var(--primary-color); margin-top:0;">🎮 電玩遊戲機</h4>
-                <p>✅ PS5 Pro / Slim、Switch OLED / Lite、Xbox Series X</p>
-                <p>✅ 各類熱門遊戲片、二手主機高價收購</p>
+                <h4 style="color:var(--primary-color); margin:0;">🎮 電玩遊戲機</h4>
+                <p>✅ PS5 Pro、Switch OLED、Xbox Series X</p>
             </div>
             <div class="item-card">
-                <h4 style="color:var(--primary-color); margin-top:0;">💻 筆記型電腦 / 平板</h4>
-                <p>✅ MacBook Pro / Air (M1/M2/M3/M4晶片)</p>
-                <p>✅ 各品牌電競筆電、iPad Pro/Air、三星 Tab</p>
+                <h4 style="color:var(--primary-color); margin:0;">💻 筆記型電腦 / 平板</h4>
+                <p>✅ MacBook 全系列、電競筆電、iPad Pro/Air</p>
             </div>
             <div class="item-card">
-                <h4 style="color:var(--primary-color); margin-top:0;">🖥️ 電腦桌機</h4>
-                <p>✅ 高階自組電腦、電競桌機、iMac、Mac mini</p>
-                <p>✅ 零件等級越高，價格越高，歡迎傳清單報價</p>
+                <h4 style="color:var(--primary-color); margin:0;">🖥️ 電腦桌機</h4>
+                <p>✅ 高階自組桌機、iMac、Mac mini 專業收購</p>
             </div>
         </div>
 
         <p style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; padding: 15px; border-radius: 5px; font-size: 0.85rem; margin-top: 20px;">
-            ⚠️ <b>3C ASAP 提醒：</b>北部（雙北、基隆、桃園、新竹）專車面交。所有收購產品皆會現場進行專業個資清除，請安心交易。
+            ⚠️ <b>3C ASAP 提醒：</b>北部地區（雙北、基隆、桃園、新竹）專人面交。所有收購產品皆會現場進行專業個資清除，請安心交易。
         </p>
     </div>
 
@@ -195,15 +225,10 @@
     </footer>
 
     <script>
-        function showTab(tabId) {
-            // 隱藏所有內容
+        function showTab(event, tabId) {
             document.querySelectorAll('.price-table-container').forEach(el => el.classList.remove('active'));
-            // 取消所有按鈕活性
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            
-            // 顯示點選的內容
             document.getElementById(tabId).classList.add('active');
-            // 激活點選的按鈕
             event.currentTarget.classList.add('active');
         }
     </script>
